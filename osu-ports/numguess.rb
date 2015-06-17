@@ -1,6 +1,5 @@
 # Author:           		    James Spolsdoff
 # Dated Created:                    6/15/15
-# Last Modified Date:               6/15/15
 # Filename:                         numGuess.rb
 #
 # Overview:
@@ -20,7 +19,6 @@ if your guess is too high, too low, or spot on.\n"
 current_player = 1
 
 begin
-  
   print "\nPlayer " + current_player.to_s + " please enter a secret number from 1 - 100: "
   secret_number = STDIN.noecho(&:gets).to_i  
 
@@ -30,7 +28,25 @@ begin
     puts "\n"
   end
 
-  puts "\n\nThanks! Now let's get this game starts."
+  puts "\n\nThanks! Now let's get this game starts.\n\n"
+
+  for i in 1..3 
+    print "Player " + current_player.to_s + " please make guess " + i.to_s + " of 3: "
+    player_guess = gets.to_i
+
+    if player_guess > secret_number 
+      puts "Your guess was too high!"
+    end
+    
+    if player_guess < secret_number 
+      puts "Your guess was too low!"
+    end
+
+    if player_guess == secret_number 
+      puts "Awesome! You guessed the secret number!"
+      break
+    end
+  end
 
   print "Do you want to play again(Y/N): "
   play_again = gets.chomp.upcase
