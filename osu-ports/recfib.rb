@@ -1,6 +1,7 @@
-# Author:		James Spolsdoff
-# Date Created:		6/17/15
-# Filename:		recfib.rb
+
+# Author:   James Spolsdoff
+# Date Created:   6/17/15
+# Filename:   recfib.rb
 #
 # Asks and displays the nth Fibonacci number from user input
 
@@ -27,3 +28,4 @@ print "Please input an integer value: "
 user_input = input_validation(gets.chomp)
 
 puts "The Fibonacci number is: #{recursive_fib(user_input)}"
+
